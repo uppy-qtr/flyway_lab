@@ -1,13 +1,13 @@
 #!/bin/bash
 #The script for running migrations locally
 BASE_PATH="/home/uppy/code/labs/flyway_lab"
-ACCOUNT="ACCOUNT_NAME"
-FLYWAY_USER="DB_USER"
-FLYWAY_PASSWORD="DB_PASSWORD"
-FLYWAY_DEFAULT_SCHEMA="DEFAULT_SCHEMA"
-DB_NAME="DB_NAME"
-WAREHOUSE_NAME="WAREHOUSE_NAME"
-ROLE="USER_ROLE"
+ACCOUNT="nh32610.eu-central-1"
+FLYWAY_USER="uppy"
+FLYWAY_PASSWORD="Tigr2010!"
+FLYWAY_DEFAULT_SCHEMA="YURY_POPOV"
+DB_NAME="FLYWAY_LAB"
+WAREHOUSE_NAME="COMPUTE_WH"
+ROLE="ACCOUNTADMIN"
 FLYWAY_URL="jdbc:snowflake://${ACCOUNT}.snowflakecomputing.com/?db=${DB_NAME}&warehouse=${WAREHOUSE_NAME}&role=${ROLE}"
 
 docker run \
