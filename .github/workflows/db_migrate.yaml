@@ -1,5 +1,4 @@
 name: 'Migration using flyway'
-
 on:
   push:
     branches:
