@@ -1,0 +1,65 @@
+name: Flyway Pipline
+description: Migrate db in GitHub using Flyway
+branding:
+  icon: database
+inputs:
+  url:
+    description: url for connecction to db
+    required: true
+  user:
+    description: Useranme for connection
+    required: false
+  password: 
+    description: Password for connection
+    required: false   
+  db_name:
+    description: DB name for applying migrations
+    required: true    
+  warehouse_name: 
+    description: WH name for applying migrations
+    required: true   
+  locations:
+    description: files, which contain scripts
+    required: true    
+    default: filesystem:./sql
+  command:
+    description: command to run
+    required: true    
+    default: migrate
+  disableclean:
+    description: Would you like to clean disabled (true or false)?
+    required: false
+    default: false
+  baselineonmigrate:
+    description: Would you like to baseline on migrate (true or false)?
+    required: false
+    default: false
+  baselineversion:
+    description: What is your baseline version?
+    required: false
+    default: 0.0
+  baselinedescription:
+    description: Baseline version description
+    required: false
+    default: ""
+runs:
+  using: docker
+  image: docker://flyway/flyway:9.10.1
+  env:
+    FLYWAY_URL: ${{ inputs.url }}
+    FLYWAY_USER: ${{ inputs.user }}
+    FLYWAY_PASSWORD: ${{ inputs.password }}
+    FLYWAY_LOCATIONS: ${{ inputs.locations }}
+    FLYWAY_CLEAN_DISABLED: ${{ inputs.disableclean }}
+    FLYWAY_BASELINE_ON_MIGRATE: ${{ inputs.baselineonmigrate }}
+    FLYWAY_BASELINE_VERSION: ${{ inputs.baselineversion }}
+    FLYWAY_BASELINE_DESCRIPTION: ${{ inputs.baselinedescription }}
+    FLYWAY_PLACEHOLDER_REPLACEMENT: "true"
+    FLYWAY_PLACEHOLDERS_WAREHOUSE: ${{ inputs.warehouse_name }}
+    FLYWAY_PLACEHOLDERS_DB_NAME: ${{ inputs.db_name }}
+  args:
+    - ${{ inputs.command }}
+
+
+
+
