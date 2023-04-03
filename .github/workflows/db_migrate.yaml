@@ -26,10 +26,10 @@ jobs:
 
     steps:
       name: Check out code from GitHub
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       name: Apply migrations
-      uses: uppy-qtr/flyway_lab/.github/actions@main
+      - uses: uppy-qtr/flyway_lab/.github/actions@main
       with:
         url: jdbc:snowflake://${{ secrets.account }}.snowflakecomputing.com/?db=${{ env.DB_NAME }}&warehouse=${{ env.WAREHOUSE_NAME }}&role=${{ env.ROLE }}
         user: ${{ secrets.db_username }}
