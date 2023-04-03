@@ -8,7 +8,7 @@ on:
       flyway_action:
         description: 'Define flyway action'
         required: true
-        default: 'info'
+        default: 'migrate'
         type: choice
         options:
         - info
