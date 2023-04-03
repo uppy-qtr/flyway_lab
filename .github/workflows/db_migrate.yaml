@@ -3,18 +3,18 @@ on:
   push:
     branches:
       - dev
-    workflow_dispatch:
-      inputs:
-        flyway_action:
-          description: 'Define flyway action'
-          required: true
-          default: 'info'
-          type: choice
-          options:
-          - info
-          - repair
-          - clean
-          - migrate
+  workflow_dispatch:
+    inputs:
+      flyway_action:
+        description: 'Define flyway action'
+        required: true
+        default: 'info'
+        type: choice
+        options:
+        - info
+        - repair
+        - clean
+        - migrate
 env:
   DB_NAME: FLYWAY_LAB
   WAREHOUSE_NAME: COMPUTE_WH
