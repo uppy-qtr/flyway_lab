@@ -53,6 +53,7 @@ runs:
     FLYWAY_CLEAN_DISABLED: ${{ inputs.disableclean }}
     FLYWAY_BASELINE_ON_MIGRATE: ${{ inputs.baselineonmigrate }}
     FLYWAY_BASELINE_VERSION: ${{ inputs.baselineversion }}
+    FLYWAY_DEFAULT_SCHEMA: "YURY_POPOV"
     FLYWAY_BASELINE_DESCRIPTION: ${{ inputs.baselinedescription }}
     FLYWAY_DEFAULT_SCHEMA: "YURY_POPOV"
     FLYWAY_PLACEHOLDER_REPLACEMENT: "true"
