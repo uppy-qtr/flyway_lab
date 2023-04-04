@@ -54,6 +54,7 @@ runs:
     FLYWAY_BASELINE_ON_MIGRATE: ${{ inputs.baselineonmigrate }}
     FLYWAY_BASELINE_VERSION: ${{ inputs.baselineversion }}
     FLYWAY_BASELINE_DESCRIPTION: ${{ inputs.baselinedescription }}
+    FLYWAY_DEFAULT_SCHEMA: "YURY_POPOV"
     FLYWAY_PLACEHOLDER_REPLACEMENT: "true"
     FLYWAY_PLACEHOLDERS_WAREHOUSE: ${{ inputs.warehouse_name }}
     FLYWAY_PLACEHOLDERS_DB_NAME: ${{ inputs.db_name }}
