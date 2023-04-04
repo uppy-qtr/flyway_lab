@@ -37,6 +37,6 @@ jobs:
           db_name: ${{ env.DB_NAME }}
           warehouse_name: ${{ env.WAREHOUSE_NAME }}
           locations: filesystem:./db/migrations            
-          command: ${{ inputs.flyway_action }}
+          args: ${{ inputs.flyway_action }}
           disableclean: false
           baselineonmigrate: false
